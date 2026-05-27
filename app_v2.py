@@ -517,7 +517,7 @@ def style_awb_dataframe(df):
     styled_df = df.copy()
     if 'leg' in styled_df.columns:
         flight_legs_mask = styled_df['leg'].apply(lambda x: isinstance(x, int) or (isinstance(x, str) and x.isdigit()))
-        styled_df = styled_df.style.applymap(highlight_empty, subset=pd.IndexSlice[flight_legs_mask, :])
+        styled_df = styled_df.style.map(highlight_empty, subset=pd.IndexSlice[flight_legs_mask, :])
     
     return styled_df
 
