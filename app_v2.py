@@ -3165,7 +3165,7 @@ def main():
             (tce1_results.get('Total', 0.0) + tce_3_value) * 1_000_000
         ) / _headline_transport_ton_km
     if scope34_weight_ton > 0:
-        transport_intensity_component2 = ((tce2_results.get('Total', 0.0) + tce4_results.get('Total', 0.0)) * 1_000_000) / scope34_weight_ton
+        transport_intensity_component2 = ((tce2_results.get('Total', 0.0) + tce4_results.get('Total', 0.0)) * 1_000_000) / (scope34_weight_ton*2)
 
     report_scope31_intensity = None
     if supplier_intensity is not None:
@@ -3459,7 +3459,7 @@ def main():
         if tce1_weight_distance > 0:
             mixed_mode_tce1_intensity = (tce1_total * 1_000_000) / tce1_weight_distance
         if total_shipment_weight_ton > 0:
-            hubs_intensity = ((tce2_total + tce4_total) * 1_000_000) / total_shipment_weight_ton
+            hubs_intensity = ((tce2_total + tce4_total) * 1_000_000) / (total_shipment_weight_ton*2)
 
         tce_table = pd.DataFrame({
             'TCE': ['TCE 1', 'TCE 2', 'TCE 3', 'TCE 4', 'Total'],
